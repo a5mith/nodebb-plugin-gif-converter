@@ -6,16 +6,16 @@
         winston = module.parent.require('winston'),
         S = module.parent.require('string'),
         meta = module.parent.require('./meta'),
-        gifconvertRegex = /<a href="([\w\-_]+)\.gif">.+<\/a>/,
+        gifconvertRegex = /https?:\/{2}[a-z0-9-]*(?:\.gif)$/,
         Embed = {},
         cache, appModule;
-    var getgifconvert = function(gifconvertKey, callback) {
-        var gifconvertNum = gifconvertKey;
+        var getgifconvert = function(gifconvertKey, callback) {
+        var gifconvertNum = gifconvertKey.split('//')[0];
         request.get({
             url: 'http://upload.gfycat.com/transcode?fetchUrl=' + gifconvertNum + ''
         }, function (err, response, body) {
             if (!err && response.statusCode === 200) {
-                var gifconvertData = JSON.parse(body).body;
+                var gifconvertData = JSON.parse(body);
                 if (!gifconvertData) {
                     return callback(null, {});
                 }
@@ -67,7 +67,7 @@
             }
         }, function(err, gifconvertinfo) {
             if (!err) {
-// Filter
+                // Filter
                 gifconvertinfo = gifconvertinfo.filter(function(issue) {
                     return issue;
                 });
