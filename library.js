@@ -12,7 +12,7 @@
     var getgifconvert = function(gifconvertKey, callback) {
         var gifconvertNum = gifconvertKey;
         request.get({
-            url: 'http://upload.gifconvert.com/transcode?fetchUrl=' + gifconvertNum + '.gif'
+            url: 'http://upload.gfycat.com/transcode?fetchUrl=' + gifconvertNum + '.gif'
         }, function (err, response, body) {
             if (!err && response.statusCode === 200) {
                 var gifconvertData = JSON.parse(body);
