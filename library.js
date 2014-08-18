@@ -10,7 +10,7 @@
         Embed = {},
         cache, appModule;
     var getgifconvert = function(gifconvertKey, callback) {
-        var gifconvertNum = gifconvertKey.split('.com/')[1];
+        var gifconvertNum = gifconvertKey.split('//')[1];
         request.get({
             url: 'http://upload.gifconvert.com/transcode?fetchUrl=' + gifconvertNum + '.gif'
         }, function (err, response, body) {
