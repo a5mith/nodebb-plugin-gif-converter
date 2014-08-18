@@ -74,7 +74,7 @@
                 appModule.render('partials/gifconvert-block', {
                     gifconvertinfo: gifconvertinfo
                 }, function(err, html) {
-                    callback(null, html);
+                    callback(null, raw += html);
                 });
             } else {
                 winston.warn('Couldn\'t Filter', gifconvertinfo);
