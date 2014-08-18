@@ -19,6 +19,7 @@
                 if (!gifconvertData) {
                     return callback(null, {});
                 }
+                console.log(gifconvertData)
                 callback(null, {
                     width: gifconvertData.width,
                     height: gifconvertData.height,
@@ -77,7 +78,7 @@
                     callback(null, raw += html);
                 });
             } else {
-                winston.warn('Encountered an error parsing gifconvert embed code, not continuing');
+                winston.warn('Couldn\'t Filter');
                 callback(null, raw);
             }
         });
