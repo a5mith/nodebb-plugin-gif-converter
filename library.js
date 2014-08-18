@@ -15,11 +15,10 @@
             url: 'http://upload.gfycat.com/transcode?fetchUrl=' + gifconvertNum + ''
         }, function (err, response, body) {
             if (!err && response.statusCode === 200) {
-                var gifconvertData = JSON.parse(body);
+                var gifconvertData = JSON.parse(body).body;
                 if (!gifconvertData) {
                     return callback(null, {});
                 }
-                winston.warn(err, response, gifconvertKey)
                 callback(null, {
                     width: gifconvertData.width,
                     height: gifconvertData.height,
@@ -75,7 +74,7 @@
                 appModule.render('partials/gifconvert-block', {
                     gifconvertinfo: gifconvertinfo
                 }, function(err, html) {
-                    callback(null, raw += html);
+                    callback(null, html);
                 });
             } else {
                 winston.warn('Couldn\'t Filter', gifconvertinfo);
