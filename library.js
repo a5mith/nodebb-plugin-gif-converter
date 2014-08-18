@@ -6,7 +6,7 @@
         winston = module.parent.require('winston'),
         S = module.parent.require('string'),
         meta = module.parent.require('./meta'),
-        gifconvertRegex = /(?:(https|http)?:\/\/)([\w\-_]+)?(?:\.gif)?/g,
+        gifconvertRegex = /([^\s]+(\.(?i)(gif))$)/gi,
         Embed = {},
         cache, appModule;
     var getgifconvert = function(gifconvertKey, callback) {
