@@ -1,0 +1,34 @@
+{
+  "name": "nodebb-plugin-gif-converter",
+  "version": "0.0.1",
+  "description": "NodeBB .gif to webm converter",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a5mith/nodebb-plugin-gif-converter"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "gycat",
+    "converter",
+    "webm"
+  ],
+  "author": {
+    "name": "a5mith",
+    "email": "35hzcommunity@gmail.com"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/a5mith/nodebb-plugin-gif-converter/issues"
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+    "dependencies": {
+        "lru-cache": "^2.5.0",
+        "request": "^2.34.0"
+    }
+}

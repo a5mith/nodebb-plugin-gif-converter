@@ -1,0 +1,16 @@
+{
+	"id": "nodebb-plugin-gif-converter",
+	"name": "NodeBB GfyCat Plugin",
+	"description": "NodeBB Plugin that converts gifs into webm files on the fly.",
+	"url": "https://github.com/a5mith/nodebb-plugin-gif-converter",
+	"library": "./library.js",
+    "templates": "templates",
+    "hooks": [
+        { "hook": "action:app.load", "method": "init" },
+        { "hook": "filter:post.parse", "method": "parse", "priority": 6 }
+    ],
+	"staticDirs": {
+        "css": "./static"
+    }
+
+}
