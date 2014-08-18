@@ -19,7 +19,7 @@
                 if (!gifconvertData) {
                     return callback(null, {});
                 }
-                console.log(gifconvertData)
+                console.log(callback)
                 callback(null, {
                     width: gifconvertData.width,
                     height: gifconvertData.height,
