@@ -19,7 +19,7 @@
                 if (!gifconvertData) {
                     return callback(null, {});
                 }
-                console.log(gifconvertNum)
+                winston.warn(err, response, gifconvertKey)
                 callback(null, {
                     width: gifconvertData.width,
                     height: gifconvertData.height,
