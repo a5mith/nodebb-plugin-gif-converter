@@ -78,7 +78,7 @@
                     callback(null, raw += html);
                 });
             } else {
-                winston.warn('Couldn\'t Filter gifconvertinfo');
+                winston.warn('Couldn\'t Filter', gifconvertinfo);
                 callback(null, raw);
             }
         });
